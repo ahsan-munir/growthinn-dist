@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="7" fill="#0A0C0B"/>
+  <!-- ascending-bar motif: conversion / numbers going up -->
+  <rect x="8" y="18" width="3.4" height="6" rx="1" fill="#5BE38A" opacity="0.55"/>
+  <rect x="14.3" y="13" width="3.4" height="11" rx="1" fill="#5BE38A" opacity="0.8"/>
+  <rect x="20.6" y="8" width="3.4" height="16" rx="1" fill="#5BE38A"/>
+</svg>

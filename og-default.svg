@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="glow" cx="22%" cy="28%" r="60%">
+      <stop offset="0%" stop-color="#5BE38A" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#5BE38A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0C0B"/>
+      <stop offset="100%" stop-color="#101413"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <text x="80" y="150" font-family="ui-monospace, monospace" font-size="22" letter-spacing="6" fill="#5BE38A">SHOPIFY · CRO · SEO · THEME</text>
+  <text x="78" y="320" font-family="system-ui, sans-serif" font-weight="700" font-size="84" fill="#F6F7F5" letter-spacing="-2">Conversion-built Shopify</text>
+  <text x="78" y="420" font-family="system-ui, sans-serif" font-weight="700" font-size="84" fill="#F6F7F5" letter-spacing="-2">for DTC brands that scale.</text>
+  <text x="80" y="540" font-family="ui-monospace, monospace" font-size="26" fill="#9AA3A0">ahsan.dev</text>
+</svg>
