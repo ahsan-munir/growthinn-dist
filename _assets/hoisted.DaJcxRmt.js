@@ -1,4 +1,4 @@
-import{s as r}from"./hoisted.qg0vX6d_.js";const a=document.querySelector("[data-contact-page-form]");if(a){const o=a.querySelector(".contact__submit"),n=(s,t)=>{let e=a.querySelector("[data-form-status]");e||(e=document.createElement("p"),e.dataset.formStatus="",e.className="field__hint",a.appendChild(e)),e.textContent=s,e.style.color=t?"var(--c-accent)":"var(--c-danger, #e5484d)"};a.addEventListener("submit",async s=>{s.preventDefault();const t=new FormData(a);if(r.formEndpoint.length===0){const e=`Name: ${t.get("name")}
+import{s as r}from"./hoisted.BPN7VHWI.js";const a=document.querySelector("[data-contact-page-form]");if(a){const o=a.querySelector(".contact__submit"),n=(s,t)=>{let e=a.querySelector("[data-form-status]");e||(e=document.createElement("p"),e.dataset.formStatus="",e.className="field__hint",a.appendChild(e)),e.textContent=s,e.style.color=t?"var(--c-accent)":"var(--c-danger, #e5484d)"};a.addEventListener("submit",async s=>{s.preventDefault();const t=new FormData(a);if(r.formEndpoint.length===0){const e=`Name: ${t.get("name")}
 Email: ${t.get("email")}
 Store: ${t.get("store")}
 

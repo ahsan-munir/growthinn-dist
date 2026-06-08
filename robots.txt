@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ahsan.dev/sitemap-index.xml
+Sitemap: https://growthinn.co/sitemap-index.xml

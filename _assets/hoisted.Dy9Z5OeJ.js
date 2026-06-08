@@ -1,1 +1,0 @@
-import"./hoisted.qg0vX6d_.js";const s=document.querySelector("[data-progress]");if(s){const e=()=>{const t=document.documentElement,o=t.scrollHeight-t.clientHeight,c=o>0?t.scrollTop/o:0;s.style.transform=`scaleX(${c})`};e(),window.addEventListener("scroll",e,{passive:!0})}
