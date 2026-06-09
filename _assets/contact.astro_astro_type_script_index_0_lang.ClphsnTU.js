@@ -1,0 +1,5 @@
+import{s as r}from"./site.DlWqYpxq.js";const a=document.querySelector("[data-contact-page-form]");if(a){const o=a.querySelector(".contact__submit"),n=(s,t)=>{let e=a.querySelector("[data-form-status]");e||(e=document.createElement("p"),e.dataset.formStatus="",e.className="field__hint",a.appendChild(e)),e.textContent=s,e.style.color=t?"var(--c-accent)":"var(--c-danger, #e5484d)"};a.addEventListener("submit",async s=>{s.preventDefault();const t=new FormData(a);if(r.formEndpoint.length===0){const e=`Name: ${t.get("name")}
+Email: ${t.get("email")}
+Store: ${t.get("store")}
+
+${t.get("message")}`;window.location.href=`mailto:${r.email}?subject=${encodeURIComponent("New enquiry from growthinn.co")}&body=${encodeURIComponent(e)}`;return}o&&(o.disabled=!0),n("Sending…",!0);try{const e=await fetch(r.formEndpoint,{method:"POST",headers:{Accept:"application/json"},body:t}),i=await e.json();e.ok&&i.success?(a.reset(),n("Thanks — your message is in. I’ll reply within one business day.",!0)):n(i.message||"Something went wrong. Please email me directly.",!1)}catch{n("Network error. Please email me directly.",!1)}finally{o&&(o.disabled=!1)}})}
