@@ -1,4 +1,28 @@
+# Default: welcome all crawlers.
 User-agent: *
+Allow: /
+
+# AI answer/generative engines — explicitly welcomed (GEO is in-scope for this
+# site). Listed individually so their access is unambiguous.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://growthinn.co/sitemap-index.xml
