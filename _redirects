@@ -1,0 +1,120 @@
+# ═══════════════════════════════════════════════════════════════════════
+# REDIRECTS — URL continuity through the revamp.
+#
+# Source: [W1_Redirect_Map.md], executed. Netlify/Cloudflare Pages format,
+# matching public/_headers. Copied verbatim into dist/ at build.
+#
+# ⚠️ THESE RULES 404 ON LOCALHOST, AND THAT IS NOT A BUG. This is a HOST
+#   file: Netlify and Cloudflare Pages parse it at deploy. `astro dev` and
+#   `astro preview` do not — they serve static files and 404 on any path
+#   without one, so every rule below looks broken locally.
+#
+#   ⭐ To exercise them on a laptop:
+#       pnpm verify:redirects    # follows all 20: 301 → 200, no chains
+#       pnpm preview:redirects   # serves dist/ WITH these applied, :4322
+#
+#   ⛔ Neither is a proof. Only `curl -I` against the deployed origin is
+#   — see [W1 §4].
+#
+# ⚠️ THE LIVE SITE HAS 23 URLs IN A SUBMITTED SITEMAP. Three survive with
+#   their path unchanged (/, /about/, /contact/) and need no rule, so
+#   there are 20 rules here. ⛔ W1 §2: every one of the 23 gets a 301 or
+#   keeps its path. NONE is left to 404, and NONE is bulk-redirected to /.
+#   A blanket redirect to root is read by Google as a soft 404 and is
+#   worse than a clean 410.
+#
+# ⛔ 301, NOT 302. These renames are permanent — a 302 tells search
+#   engines to keep the old URL, which is the opposite of the intent.
+#
+# ⛔ NO CHAINS. Every source points at its FINAL destination. If a target
+#   is ever renamed, re-point every rule that aimed at it rather than
+#   adding a second hop.
+#
+# ⚠️ TRAILING SLASHES ON BOTH SIDES. astro.config.mjs sets
+#   `trailingSlash: "always"`; a target without one costs a second
+#   redirect and turns 20 rules into 40 hops.
+#
+# ⭐ RE-POINTING A 301 LATER IS FREE. Several rules below are many-to-one
+#   into an index because the specific successor does not exist yet. When
+#   one does, change the target here — that is cheaper than a 404 now.
+# ═══════════════════════════════════════════════════════════════════════
+
+
+# ── Renamed surfaces ───────────────────────────────────────────────────
+# /process/ → /standard/ is a judged mapping, not a rename: /standard/ is
+# the method-made-public surface, which is what /process/ was under the
+# old positioning.
+/process/                                   /standard/                        301
+/case-studies/                              /work/                            301
+/insights/                                  /notes/                           301
+
+
+# ── Case studies → the index ───────────────────────────────────────────
+# ⛔ MANY-TO-ONE ON PURPOSE. [Addendum §3] CUT the metric claims these five
+# pages were built on (+38%, −47%, +31%, +210%, +29%, +32%, "100+
+# frictions removed"). None carries into this corpus in any form, so there
+# is no successor page to point at — /work/ ships thin and honest.
+#
+# ⭐ If a study is later cleared with client permission and evidence, it
+# earns a /work/[slug]/ and its rule is re-pointed then.
+/case-studies/beauty-headless-migration/    /work/                            301
+/case-studies/fitness-technical-seo/        /work/                            301
+/case-studies/haircare-theme-rebuild/       /work/                            301
+/case-studies/supplement-brand-cro/         /work/                            301
+/case-studies/wellness-pdp-cro/             /work/                            301
+
+
+# ── Service pages ──────────────────────────────────────────────────────
+# [Addendum §4] activated B2: the six pages move to /services/.
+#
+# ⚠️ SLUGS DO NOT CARRY. The spokes follow [01d §3]'s offer set, not the
+# live site's CRO-era naming, so each rule below is a JUDGED MAPPING and
+# not a mechanical parent swap. Two live pages merge into one spoke, and
+# one is not a spoke at all.
+/ecommerce-development-services/                                    /services/                        301
+/ecommerce-development-services/conversion-theme-development/       /services/theme-development/      301
+/ecommerce-development-services/shopify-technical-seo/              /services/technical-seo/          301
+/ecommerce-development-services/shopify-landing-page-development/   /services/landing-pages/          301
+
+# ⚠️ TWO LIVE PAGES, ONE SPOKE. /shopify-cro/ and
+# /shopify-product-page-development/ both merge into /services/cro-ux/.
+/ecommerce-development-services/shopify-cro/                        /services/cro-ux/                 301
+/ecommerce-development-services/shopify-product-page-development/   /services/cro-ux/                 301
+
+# ⭐ NOT A SPOKE — it IS the audit. The live page was the free CRO audit;
+# its successor is the paid /audit/ surface, not a service description.
+/ecommerce-development-services/ecommerce-cro-audit/                /audit/                           301
+
+
+# ── Insights posts → /notes/ ───────────────────────────────────────────
+# ⭐ O6 IS CLOSED. All five posts survived the rewrite [04z §4] and each
+# KEPT ITS SLUG, so every rule below is now 1:1 at the article itself
+# rather than a many-to-one landing on the index.
+#
+# ⚠️ A 1:1 redirect preserves the ranking signal the old URL earned; a
+# redirect to an index discards it and hands the reader a list to search
+# instead of the page they asked for. That is why W1 said to re-point
+# these "where a post survives the rewrite" — five of the twenty rules
+# just stopped being lossy.
+#
+# ⛔ The slug is now load-bearing in TWO places: here, and `legacySlug`
+# in each article's frontmatter. Renaming an article breaks this map —
+# change both, or neither.
+/insights/conversion-theme-architecture/    /notes/conversion-theme-architecture/    301
+/insights/cro-consultant-vs-agency/         /notes/cro-consultant-vs-agency/         301
+/insights/shopify-cro-mistakes/             /notes/shopify-cro-mistakes/             301
+/insights/shopify-technical-seo-guide/      /notes/shopify-technical-seo-guide/      301
+/insights/shopify-traffic-no-sales/         /notes/shopify-traffic-no-sales/         301
+
+
+# ── Not redirected, deliberately ───────────────────────────────────────
+# /                 survives — content changes, URL does not
+# /about/           survives
+# /contact/         survives
+#
+# ⭐ /services/theme-redesign/ has NO inbound rule: it is a new surface
+#   with no live predecessor. Expected, not an omission.
+#
+# ⛔ NO CATCH-ALL. A trailing `/*  /  301` would turn every future typo
+#   into a soft 404 and would mask a missing rule rather than surface it.
+#   An unmatched path SHOULD reach the 404 page.

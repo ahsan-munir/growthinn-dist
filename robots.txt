@@ -1,28 +1,14 @@
-# Default: welcome all crawlers.
 User-agent: *
 Allow: /
 
-# AI answer/generative engines — explicitly welcomed (GEO is in-scope for this
-# site). Listed individually so their access is unambiguous.
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
+# ⚠️ sitemap-INDEX.xml, not sitemap.xml. @astrojs/sitemap emits an index
+# (sitemap-index.xml) pointing at one or more sitemap-N.xml files, and
+# there is no /sitemap.xml at any point.
+#
+# ⛔ This line said `sitemap.xml` and pointed every crawler at a 404 —
+# found 2026-09-10, when no sitemap was being generated at all. Both
+# halves are fixed together: the integration is installed in
+# astro.config.mjs, and this now names the file it actually produces.
+#
+# ⚠️ [W1 §4] requires this resubmitted in Search Console on launch day.
 Sitemap: https://growthinn.co/sitemap-index.xml

@@ -1,0 +1,16 @@
+# Fonts are content-addressed by name and never change in place —
+# a new face means a new filename. Immutable, one year.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# Astro fingerprints these, so they are safe to cache hard.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML must revalidate — the readings on /standard/ are read at build
+# time, and a stale page would show yesterday's numbers as today's.
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

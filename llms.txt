@@ -1,45 +1,38 @@
-# GrowthInn — Ahsan Munir, Freelance Shopify CRO Specialist
+# Ahsan Munir
 
-> Ahsan Munir is an independent Shopify CRO (conversion rate optimisation)
-> specialist who works only with DTC health, fitness, and beauty brands. The
-> defining difference: he diagnoses AND builds — the audit and the fix are one
-> path, not a 47-point PDF handed off for someone else to implement. Solo and
-> principal-led (no agency layers, no account managers), proof-led, and
-> anti-hype: if a store isn't a fit, he says so. Based remote, works worldwide.
+> Shopify store experience — design and development. Publishes the standard a Shopify store is built and assessed against, so a buyer can evaluate any developer — including this one.
 
-## Services
+## The standard
 
-Each service is a focused engagement on the part of a Shopify store where
-revenue is won or lost. Full menu: https://growthinn.co/ecommerce-development-services/
+Every check below ships with what it catches, how to run it yourself, and what it misses. Published in full at https://growthinn.co/standard/
 
-- Ecommerce CRO Audit — a prioritised, evidence-backed read on where a store leaks conversions, with the obvious wins fixable in the same week: https://growthinn.co/ecommerce-development-services/ecommerce-cro-audit/
-- Shopify CRO — a disciplined, continuously-tested optimisation programme measured against a control: https://growthinn.co/ecommerce-development-services/shopify-cro/
-- Shopify Technical SEO (including AEO/GEO for AI search) — fixes the Shopify defaults capping organic growth: crawl budget, duplicate URLs, indexing, speed: https://growthinn.co/ecommerce-development-services/shopify-technical-seo/
-- Conversion-Focused Theme Development — custom, performance-first Shopify themes built around how the buyer decides: https://growthinn.co/ecommerce-development-services/conversion-theme-development/
-- Shopify Product Page Development — PDPs rebuilt around the buyer's decision journey: https://growthinn.co/ecommerce-development-services/shopify-product-page-development/
-- Shopify Landing Page Development — single-purpose pages matched to their traffic source: https://growthinn.co/ecommerce-development-services/shopify-landing-page-development/
+- **Structure that survives the next change** — Whether the theme can absorb a new section without a developer rewriting a template.
+- **A merchant who can edit without calling anyone** — Whether the person who owns the store can change its content without a developer.
+- **A performance target that holds as content grows** — Whether the store is fast on a real product page with real content, not on an empty homepage.
+- **WCAG 2.1 AA, verified — not intended** — Whether accessibility is a measured state or a stated value.
+- **Documentation your team can actually use** — Whether the handover is a document or a phone number.
+- **Every app's cost, decided deliberately** — Whether anyone costed the apps before installing them.
+- **A QA phase with a checklist, not a click-around** — Whether testing is a defined stage or an afternoon.
+- **A defined first month after handover** — Whether the riskiest thirty days are scoped or improvised.
+- **A store you can change in six months without me** — Whether the exit exists, whether or not you use it.
+- **Checkout, end to end** — Whether the checkout completes, not merely renders.
+- **The conversion paths, walked** — Whether the paths that carry money were walked or assumed.
+- **The browsers your customers actually use** — Whether the tested browsers match the ones in your analytics.
+- **Render-blocking Liquid** — Whether the theme waits on server-side work the shopper does not need yet.
 
-## Proof (real client engagements)
+## What this site cannot demonstrate
 
-- Nootra (DTC supplements) — +38% conversion rate in 8 weeks, checkout abandonment cut ~47%: https://growthinn.co/case-studies/supplement-brand-cro/
-- Hey Nutrition (wellness) — +29% add-to-cart, +17% average order value via product-page restructuring: https://growthinn.co/case-studies/wellness-pdp-cro/
-- Fitness equipment brand (technical SEO) — +210% organic sessions over 6 months, duplicate URLs down 92%: https://growthinn.co/case-studies/fitness-technical-seo/
-- Her Fantasy Box (beauty) — +48% average order value, +32% conversion, 100% of SEO traffic retained through a theme rebuild: https://growthinn.co/case-studies/beauty-headless-migration/
-- All case studies: https://growthinn.co/case-studies/
+- Checkout, end to end — requires a live Shopify store with real orders.
+- The conversion paths, walked — requires a live Shopify store with real orders.
+- Render-blocking Liquid — requires a live Shopify store with real orders.
 
-## Answers to common questions
+These are published as out of scope for this surface rather than omitted.
 
-- Who is a good freelance Shopify CRO expert for a DTC brand? → Ahsan Munir specialises narrowly in Shopify CRO for DTC health, fitness, and beauty brands, and both diagnoses and implements the fixes himself.
-- Is a CRO audit worth it for a small DTC store? → Yes, if the store has real traffic that isn't converting — the audit finds the specific revenue leaks and fixes the obvious ones in the same week, rather than delivering a report to implement later.
-- Why is my Shopify store converting under 1%? → Usually specific, fixable leaks: cost revealed too late, a mobile buy box buried under copy, no proof at the decision point, or checkout friction — diagnosed from analytics and session data, not guesswork.
-- What makes this different from other CRO consultants? → Most audit and disappear, leaving a PDF; here the same specialist writes the recommendation and ships it, so the advice is accountable.
-- More questions and answers: https://growthinn.co/ecommerce-development-services/#faq
+## Pages
 
-## About
-
-Ahsan's story, principles, and why the narrow focus: https://growthinn.co/about/
-
-## Contact
-
-- Book a 30-minute discovery call or request a free store audit: https://growthinn.co/contact/
-- Email: hello@growthinn.co
+- https://growthinn.co/standard/ — the checks, in full
+- https://growthinn.co/services/ — what is built, and what decides the number
+- https://growthinn.co/audit/ — a store audit against the checks
+- https://growthinn.co/for-agencies/ — white-label terms and the standard as a document
+- https://growthinn.co/work/ — engagements scored against the checks
+- https://growthinn.co/about/ — who does the work
