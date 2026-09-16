@@ -8,7 +8,7 @@ Every check below ships with what it catches, how to run it yourself, and what i
 
 - **Structure that survives the next change** — Whether the theme can absorb a new section without a developer rewriting a template.
 - **A merchant who can edit without calling anyone** — Whether the person who owns the store can change its content without a developer.
-- **A performance target that holds as content grows** — Whether the store is fast on a real product page with real content, not on an empty homepage.
+- **A performance target that holds as content grows** — Whether the store is fast on the pages that carry real content, measured in numbers rather than impressions.
 - **WCAG 2.1 AA, verified — not intended** — Whether accessibility is a measured state or a stated value.
 - **Documentation your team can actually use** — Whether the handover is a document or a phone number.
 - **Every app's cost, decided deliberately** — Whether anyone costed the apps before installing them.
@@ -18,13 +18,13 @@ Every check below ships with what it catches, how to run it yourself, and what i
 - **Checkout, end to end** — Whether the checkout completes, not merely renders.
 - **The conversion paths, walked** — Whether the paths that carry money were walked or assumed.
 - **The browsers your customers actually use** — Whether the tested browsers match the ones in your analytics.
-- **Render-blocking Liquid** — Whether the theme waits on server-side work the shopper does not need yet.
+- **Rendering that doesn't make the shopper wait** — Whether Liquid, scripts and third-party code delay the content the shopper actually came for.
 
 ## What this site cannot demonstrate
 
 - Checkout, end to end — requires a live Shopify store with real orders.
 - The conversion paths, walked — requires a live Shopify store with real orders.
-- Render-blocking Liquid — requires a live Shopify store with real orders.
+- Rendering that doesn't make the shopper wait — requires a live Shopify store with real orders.
 
 These are published as out of scope for this surface rather than omitted.
 

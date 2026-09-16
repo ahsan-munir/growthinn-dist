@@ -35,6 +35,24 @@
   RedirectMatch 301 "^/insights/shopify-traffic-no-sales/$" "/notes/shopify-traffic-no-sales/"
 </IfModule>
 
+# ── Short links · src/data/links.ts · 3 codes ────────────────
+# ⛔ GENERATED. Add or change a link in src/data/links.ts, then rebuild.
+#    A hand-edit here survives until the next `pnpm release` and then
+#    disappears with no error.
+#
+# ⛔ 302, not 301 — these handles are EXPECTED to be re-pointed. A 301
+#    is cached hard by browsers and CDNs, so a later re-point reaches
+#    some readers and not others, with no way to tell which.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Evergreen. The published standard — the on-sight signal [OS-1].
+  RewriteRule "^go/standards/?$" "/standard/?utm_source=linkedin&utm_medium=social&utm_campaign=shopify_standards" [R=302,L,QSD]
+  # Evergreen. The paid audit, the merchant sink [F6].
+  RewriteRule "^go/theme-audit/?$" "/audit/?utm_source=linkedin&utm_medium=social&utm_campaign=theme_audit" [R=302,L,QSD]
+  # Evergreen. The agency sink [F6] — the other peer, not a fallback.
+  RewriteRule "^go/agencies/?$" "/for-agencies/?utm_source=linkedin&utm_medium=social&utm_campaign=agency_standard" [R=302,L,QSD]
+</IfModule>
+
 # ── Trailing slashes ───────────────────────────────────────────────
 # astro.config.mjs sets `trailingSlash: "always"` and the build emits
 # directory-style pages (/about/index.html). This makes Apache agree,
