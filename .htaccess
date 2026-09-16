@@ -35,7 +35,7 @@
   RedirectMatch 301 "^/insights/shopify-traffic-no-sales/$" "/notes/shopify-traffic-no-sales/"
 </IfModule>
 
-# ── Short links · src/data/links.ts · 3 codes ────────────────
+# ── Short links · src/data/links.ts · 5 codes ────────────────
 # ⛔ GENERATED. Add or change a link in src/data/links.ts, then rebuild.
 #    A hand-edit here survives until the next `pnpm release` and then
 #    disappears with no error.
@@ -46,11 +46,15 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   # Evergreen. The published standard — the on-sight signal [OS-1].
-  RewriteRule "^go/standards/?$" "/standard/?utm_source=linkedin&utm_medium=social&utm_campaign=shopify_standards" [R=302,L,QSD]
+  RewriteRule "^go/standard/?$" "/standard/?utm_source=linkedin&utm_medium=social&utm_campaign=shopify_standards" [R=302,L,QSD]
   # Evergreen. The paid audit, the merchant sink [F6].
   RewriteRule "^go/theme-audit/?$" "/audit/?utm_source=linkedin&utm_medium=social&utm_campaign=theme_audit" [R=302,L,QSD]
   # Evergreen. The agency sink [F6] — the other peer, not a fallback.
   RewriteRule "^go/agencies/?$" "/for-agencies/?utm_source=linkedin&utm_medium=social&utm_campaign=agency_standard" [R=302,L,QSD]
+  # Evergreen. The homepage — for the LinkedIn profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^go/home/?$" "/?utm_source=linkedin&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
+  # Evergreen. [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
+  RewriteRule "^go/amazon/?$" "/amazon/?utm_source=linkedin&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
 </IfModule>
 
 # ── Trailing slashes ───────────────────────────────────────────────
