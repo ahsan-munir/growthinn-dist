@@ -35,7 +35,8 @@
   RedirectMatch 301 "^/insights/shopify-traffic-no-sales/$" "/notes/shopify-traffic-no-sales/"
 </IfModule>
 
-# ── Short links · src/data/links.ts · 5 codes ────────────────
+# ── Short links · src/data/links.ts · 30 codes ────────────────
+#    /go/ LinkedIn  ·  /x/ X  ·  /rd/ Reddit  ·  /em/ Email  ·  /gh/ GitHub  ·  /cm/ Community
 # ⛔ GENERATED. Add or change a link in src/data/links.ts, then rebuild.
 #    A hand-edit here survives until the next `pnpm release` and then
 #    disappears with no error.
@@ -45,16 +46,66 @@
 #    some readers and not others, with no way to tell which.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Evergreen. The published standard — the on-sight signal [OS-1].
+  # The published standard — the on-sight signal [OS-1].
   RewriteRule "^go/standard/?$" "/standard/?utm_source=linkedin&utm_medium=social&utm_campaign=shopify_standards" [R=302,L,QSD]
-  # Evergreen. The paid audit, the merchant sink [F6].
+  # The paid audit, the merchant sink [F6].
   RewriteRule "^go/theme-audit/?$" "/audit/?utm_source=linkedin&utm_medium=social&utm_campaign=theme_audit" [R=302,L,QSD]
-  # Evergreen. The agency sink [F6] — the other peer, not a fallback.
+  # The agency sink [F6] — the other peer, not a fallback.
   RewriteRule "^go/agencies/?$" "/for-agencies/?utm_source=linkedin&utm_medium=social&utm_campaign=agency_standard" [R=302,L,QSD]
-  # Evergreen. The homepage — for the LinkedIn profile link and any post pointing at the whole site rather than one surface.
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
   RewriteRule "^go/home/?$" "/?utm_source=linkedin&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
-  # Evergreen. [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
+  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
   RewriteRule "^go/amazon/?$" "/amazon/?utm_source=linkedin&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The published standard — the on-sight signal [OS-1].
+  RewriteRule "^x/standard/?$" "/standard/?utm_source=x&utm_medium=social&utm_campaign=shopify_standards" [R=302,L,QSD]
+  # The paid audit, the merchant sink [F6].
+  RewriteRule "^x/theme-audit/?$" "/audit/?utm_source=x&utm_medium=social&utm_campaign=theme_audit" [R=302,L,QSD]
+  # The agency sink [F6] — the other peer, not a fallback.
+  RewriteRule "^x/agencies/?$" "/for-agencies/?utm_source=x&utm_medium=social&utm_campaign=agency_standard" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^x/home/?$" "/?utm_source=x&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
+  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
+  RewriteRule "^x/amazon/?$" "/amazon/?utm_source=x&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The published standard — the on-sight signal [OS-1].
+  RewriteRule "^rd/standard/?$" "/standard/?utm_source=reddit&utm_medium=social&utm_campaign=shopify_standards" [R=302,L,QSD]
+  # The paid audit, the merchant sink [F6].
+  RewriteRule "^rd/theme-audit/?$" "/audit/?utm_source=reddit&utm_medium=social&utm_campaign=theme_audit" [R=302,L,QSD]
+  # The agency sink [F6] — the other peer, not a fallback.
+  RewriteRule "^rd/agencies/?$" "/for-agencies/?utm_source=reddit&utm_medium=social&utm_campaign=agency_standard" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^rd/home/?$" "/?utm_source=reddit&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
+  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
+  RewriteRule "^rd/amazon/?$" "/amazon/?utm_source=reddit&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The published standard — the on-sight signal [OS-1].
+  RewriteRule "^em/standard/?$" "/standard/?utm_source=newsletter&utm_medium=email&utm_campaign=shopify_standards" [R=302,L,QSD]
+  # The paid audit, the merchant sink [F6].
+  RewriteRule "^em/theme-audit/?$" "/audit/?utm_source=newsletter&utm_medium=email&utm_campaign=theme_audit" [R=302,L,QSD]
+  # The agency sink [F6] — the other peer, not a fallback.
+  RewriteRule "^em/agencies/?$" "/for-agencies/?utm_source=newsletter&utm_medium=email&utm_campaign=agency_standard" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^em/home/?$" "/?utm_source=newsletter&utm_medium=email&utm_campaign=profile" [R=302,L,QSD]
+  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
+  RewriteRule "^em/amazon/?$" "/amazon/?utm_source=newsletter&utm_medium=email&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The published standard — the on-sight signal [OS-1].
+  RewriteRule "^gh/standard/?$" "/standard/?utm_source=github&utm_medium=referral&utm_campaign=shopify_standards" [R=302,L,QSD]
+  # The paid audit, the merchant sink [F6].
+  RewriteRule "^gh/theme-audit/?$" "/audit/?utm_source=github&utm_medium=referral&utm_campaign=theme_audit" [R=302,L,QSD]
+  # The agency sink [F6] — the other peer, not a fallback.
+  RewriteRule "^gh/agencies/?$" "/for-agencies/?utm_source=github&utm_medium=referral&utm_campaign=agency_standard" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^gh/home/?$" "/?utm_source=github&utm_medium=referral&utm_campaign=profile" [R=302,L,QSD]
+  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
+  RewriteRule "^gh/amazon/?$" "/amazon/?utm_source=github&utm_medium=referral&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The published standard — the on-sight signal [OS-1].
+  RewriteRule "^cm/standard/?$" "/standard/?utm_source=community&utm_medium=referral&utm_campaign=shopify_standards" [R=302,L,QSD]
+  # The paid audit, the merchant sink [F6].
+  RewriteRule "^cm/theme-audit/?$" "/audit/?utm_source=community&utm_medium=referral&utm_campaign=theme_audit" [R=302,L,QSD]
+  # The agency sink [F6] — the other peer, not a fallback.
+  RewriteRule "^cm/agencies/?$" "/for-agencies/?utm_source=community&utm_medium=referral&utm_campaign=agency_standard" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^cm/home/?$" "/?utm_source=community&utm_medium=referral&utm_campaign=profile" [R=302,L,QSD]
+  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
+  RewriteRule "^cm/amazon/?$" "/amazon/?utm_source=community&utm_medium=referral&utm_campaign=catalogue_portability" [R=302,L,QSD]
 </IfModule>
 
 # ── Trailing slashes ───────────────────────────────────────────────
