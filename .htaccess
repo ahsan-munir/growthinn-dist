@@ -10,108 +10,47 @@
 # each host ignores the others' format.
 # ═══════════════════════════════════════════════════════════════════
 
-# ── The redirect map · [W1] · 20 rules ──────────────────────
+# ── The redirect map · 26 rules ───────────────────────────
 # ⛔ 301 permanent. No chains: every source points at its final target.
+# ⚠️ Three site generations collapse here — gen-1 /ecommerce-development-
+#    services/*, gen-2 /services/*, and the gen-3 renames.
 <IfModule mod_alias.c>
-  RedirectMatch 301 "^/process/$" "/standard/"
-  RedirectMatch 301 "^/case-studies/$" "/work/"
-  RedirectMatch 301 "^/insights/$" "/notes/"
-  RedirectMatch 301 "^/case-studies/beauty-headless-migration/$" "/work/"
-  RedirectMatch 301 "^/case-studies/fitness-technical-seo/$" "/work/"
-  RedirectMatch 301 "^/case-studies/haircare-theme-rebuild/$" "/work/"
-  RedirectMatch 301 "^/case-studies/supplement-brand-cro/$" "/work/"
-  RedirectMatch 301 "^/case-studies/wellness-pdp-cro/$" "/work/"
   RedirectMatch 301 "^/ecommerce-development-services/$" "/services/"
-  RedirectMatch 301 "^/ecommerce-development-services/conversion-theme-development/$" "/services/theme-development/"
-  RedirectMatch 301 "^/ecommerce-development-services/shopify-technical-seo/$" "/services/technical-seo/"
-  RedirectMatch 301 "^/ecommerce-development-services/shopify-landing-page-development/$" "/services/landing-pages/"
-  RedirectMatch 301 "^/ecommerce-development-services/shopify-cro/$" "/services/cro-ux/"
-  RedirectMatch 301 "^/ecommerce-development-services/shopify-product-page-development/$" "/services/cro-ux/"
-  RedirectMatch 301 "^/ecommerce-development-services/ecommerce-cro-audit/$" "/audit/"
+  RedirectMatch 301 "^/ecommerce-development-services/shopify-cro/$" "/shopify-cro/"
+  RedirectMatch 301 "^/ecommerce-development-services/shopify-technical-seo/$" "/product-schema-merchant-center/"
+  RedirectMatch 301 "^/ecommerce-development-services/ecommerce-cro-audit/$" "/shopify-cro-audit/"
+  RedirectMatch 301 "^/ecommerce-development-services/conversion-theme-development/$" "/shopify-theme-redesign/"
+  RedirectMatch 301 "^/ecommerce-development-services/shopify-landing-page-development/$" "/landing-pages-paid-traffic/"
+  RedirectMatch 301 "^/ecommerce-development-services/shopify-product-page-development/$" "/shopify-cro/"
+  RedirectMatch 301 "^/services/cro-ux/$" "/shopify-cro/"
+  RedirectMatch 301 "^/services/technical-seo/$" "/product-schema-merchant-center/"
+  RedirectMatch 301 "^/services/theme-development/$" "/shopify-theme-redesign/"
+  RedirectMatch 301 "^/services/theme-redesign/$" "/shopify-theme-redesign/"
+  RedirectMatch 301 "^/services/landing-pages/$" "/landing-pages-paid-traffic/"
+  RedirectMatch 301 "^/services/performance/$" "/shopify-cro/"
+  RedirectMatch 301 "^/what-i-do/$" "/services/"
+  RedirectMatch 301 "^/results/$" "/case-studies/"
+  RedirectMatch 301 "^/audit/$" "/shopify-cro-audit/"
+  RedirectMatch 301 "^/amazon/$" "/amazon-to-shopify/"
+  RedirectMatch 301 "^/standard/$" "/method/"
+  RedirectMatch 301 "^/work/$" "/case-studies/"
+  RedirectMatch 301 "^/insights/$" "/notes/"
   RedirectMatch 301 "^/insights/conversion-theme-architecture/$" "/notes/conversion-theme-architecture/"
   RedirectMatch 301 "^/insights/cro-consultant-vs-agency/$" "/notes/cro-consultant-vs-agency/"
   RedirectMatch 301 "^/insights/shopify-cro-mistakes/$" "/notes/shopify-cro-mistakes/"
   RedirectMatch 301 "^/insights/shopify-technical-seo-guide/$" "/notes/shopify-technical-seo-guide/"
   RedirectMatch 301 "^/insights/shopify-traffic-no-sales/$" "/notes/shopify-traffic-no-sales/"
-</IfModule>
-
-# ── Short links · src/data/links.ts · 30 codes ────────────────
-#    /go/ LinkedIn  ·  /x/ X  ·  /rd/ Reddit  ·  /em/ Email  ·  /gh/ GitHub  ·  /cm/ Community
-# ⛔ GENERATED. Add or change a link in src/data/links.ts, then rebuild.
-#    A hand-edit here survives until the next `pnpm release` and then
-#    disappears with no error.
-#
-# ⛔ 302, not 301 — these handles are EXPECTED to be re-pointed. A 301
-#    is cached hard by browsers and CDNs, so a later re-point reaches
-#    some readers and not others, with no way to tell which.
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  # The published standard — the on-sight signal [OS-1].
-  RewriteRule "^go/standard/?$" "/standard/?utm_source=linkedin&utm_medium=social&utm_campaign=shopify_standards" [R=302,L,QSD]
-  # The paid audit, the merchant sink [F6].
-  RewriteRule "^go/theme-audit/?$" "/audit/?utm_source=linkedin&utm_medium=social&utm_campaign=theme_audit" [R=302,L,QSD]
-  # The agency sink [F6] — the other peer, not a fallback.
-  RewriteRule "^go/agencies/?$" "/for-agencies/?utm_source=linkedin&utm_medium=social&utm_campaign=agency_standard" [R=302,L,QSD]
-  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
-  RewriteRule "^go/home/?$" "/?utm_source=linkedin&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
-  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
-  RewriteRule "^go/amazon/?$" "/amazon/?utm_source=linkedin&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
-  # The published standard — the on-sight signal [OS-1].
-  RewriteRule "^x/standard/?$" "/standard/?utm_source=x&utm_medium=social&utm_campaign=shopify_standards" [R=302,L,QSD]
-  # The paid audit, the merchant sink [F6].
-  RewriteRule "^x/theme-audit/?$" "/audit/?utm_source=x&utm_medium=social&utm_campaign=theme_audit" [R=302,L,QSD]
-  # The agency sink [F6] — the other peer, not a fallback.
-  RewriteRule "^x/agencies/?$" "/for-agencies/?utm_source=x&utm_medium=social&utm_campaign=agency_standard" [R=302,L,QSD]
-  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
-  RewriteRule "^x/home/?$" "/?utm_source=x&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
-  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
-  RewriteRule "^x/amazon/?$" "/amazon/?utm_source=x&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
-  # The published standard — the on-sight signal [OS-1].
-  RewriteRule "^rd/standard/?$" "/standard/?utm_source=reddit&utm_medium=social&utm_campaign=shopify_standards" [R=302,L,QSD]
-  # The paid audit, the merchant sink [F6].
-  RewriteRule "^rd/theme-audit/?$" "/audit/?utm_source=reddit&utm_medium=social&utm_campaign=theme_audit" [R=302,L,QSD]
-  # The agency sink [F6] — the other peer, not a fallback.
-  RewriteRule "^rd/agencies/?$" "/for-agencies/?utm_source=reddit&utm_medium=social&utm_campaign=agency_standard" [R=302,L,QSD]
-  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
-  RewriteRule "^rd/home/?$" "/?utm_source=reddit&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
-  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
-  RewriteRule "^rd/amazon/?$" "/amazon/?utm_source=reddit&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
-  # The published standard — the on-sight signal [OS-1].
-  RewriteRule "^em/standard/?$" "/standard/?utm_source=newsletter&utm_medium=email&utm_campaign=shopify_standards" [R=302,L,QSD]
-  # The paid audit, the merchant sink [F6].
-  RewriteRule "^em/theme-audit/?$" "/audit/?utm_source=newsletter&utm_medium=email&utm_campaign=theme_audit" [R=302,L,QSD]
-  # The agency sink [F6] — the other peer, not a fallback.
-  RewriteRule "^em/agencies/?$" "/for-agencies/?utm_source=newsletter&utm_medium=email&utm_campaign=agency_standard" [R=302,L,QSD]
-  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
-  RewriteRule "^em/home/?$" "/?utm_source=newsletter&utm_medium=email&utm_campaign=profile" [R=302,L,QSD]
-  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
-  RewriteRule "^em/amazon/?$" "/amazon/?utm_source=newsletter&utm_medium=email&utm_campaign=catalogue_portability" [R=302,L,QSD]
-  # The published standard — the on-sight signal [OS-1].
-  RewriteRule "^gh/standard/?$" "/standard/?utm_source=github&utm_medium=referral&utm_campaign=shopify_standards" [R=302,L,QSD]
-  # The paid audit, the merchant sink [F6].
-  RewriteRule "^gh/theme-audit/?$" "/audit/?utm_source=github&utm_medium=referral&utm_campaign=theme_audit" [R=302,L,QSD]
-  # The agency sink [F6] — the other peer, not a fallback.
-  RewriteRule "^gh/agencies/?$" "/for-agencies/?utm_source=github&utm_medium=referral&utm_campaign=agency_standard" [R=302,L,QSD]
-  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
-  RewriteRule "^gh/home/?$" "/?utm_source=github&utm_medium=referral&utm_campaign=profile" [R=302,L,QSD]
-  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
-  RewriteRule "^gh/amazon/?$" "/amazon/?utm_source=github&utm_medium=referral&utm_campaign=catalogue_portability" [R=302,L,QSD]
-  # The published standard — the on-sight signal [OS-1].
-  RewriteRule "^cm/standard/?$" "/standard/?utm_source=community&utm_medium=referral&utm_campaign=shopify_standards" [R=302,L,QSD]
-  # The paid audit, the merchant sink [F6].
-  RewriteRule "^cm/theme-audit/?$" "/audit/?utm_source=community&utm_medium=referral&utm_campaign=theme_audit" [R=302,L,QSD]
-  # The agency sink [F6] — the other peer, not a fallback.
-  RewriteRule "^cm/agencies/?$" "/for-agencies/?utm_source=community&utm_medium=referral&utm_campaign=agency_standard" [R=302,L,QSD]
-  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
-  RewriteRule "^cm/home/?$" "/?utm_source=community&utm_medium=referral&utm_campaign=profile" [R=302,L,QSD]
-  # [05 Page9] — the catalogue-portability check. ⚠️ A DIFFERENT AUDIENCE, not a service page: Amazon sellers testing whether their listing can move. Its own campaign so that traffic never merges with the merchant sink's.
-  RewriteRule "^cm/amazon/?$" "/amazon/?utm_source=community&utm_medium=referral&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  RedirectMatch 301 "^/case-studies/beauty-headless-migration/$" "/case-studies/"
 </IfModule>
 
 # ── Trailing slashes ───────────────────────────────────────────────
 # astro.config.mjs sets `trailingSlash: "always"` and the build emits
 # directory-style pages (/about/index.html). This makes Apache agree,
 # so /about and /about/ do not become two URLs with the same content.
+#
+# ⚠️ Two URLs are ALREADY INDEXED without their slash — /contact and
+# /case-studies/fitness-technical-seo (3 impressions each, GSC 12mo to
+# 2026-10-06). This is the rule that resolves them.
 #
 # ⚠️ The redirect rules above run FIRST (mod_alias precedes mod_rewrite),
 # so an old URL is 301'd to its target before this can touch it.
@@ -128,7 +67,7 @@
   RewriteRule ^(.*)$ /$1/ [R=301,L]
 </IfModule>
 
-# ── Caching — mirrors public/_headers ──────────────────────────────
+# ── Caching ────────────────────────────────────────────────────────
 <IfModule mod_headers.c>
   # Fonts are content-addressed by name; a new face means a new file.
   <FilesMatch "\.(woff2|woff|ttf|otf)$">
@@ -141,8 +80,8 @@
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
-  # ⚠️ HTML MUST REVALIDATE. /standard/ renders readings measured at
-  # build time, and a cached page shows yesterday's numbers as today's.
+  # ⚠️ HTML MUST REVALIDATE, or a cached page serves stale copy after
+  # a deploy with no way for the reader to know.
   <FilesMatch "\.(html|xml|txt|json)$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
   </FilesMatch>
@@ -153,12 +92,10 @@
 
 # ── The 404 ────────────────────────────────────────────────────────
 # ⛔ A real 404, not a redirect to /. A blanket redirect to root is read
-# as a soft 404 and is worse than a clean one. [W1 §2]
+# as a soft 404 and is worse than a clean one.
 ErrorDocument 404 /404.html
 
 # ── Compression ────────────────────────────────────────────────────
-# The stylesheet is inlined into every document, so HTML is the largest
-# thing on the wire. [SD-20]'s floor cares.
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
   AddOutputFilterByType DEFLATE application/javascript application/json

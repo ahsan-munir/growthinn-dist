@@ -1,38 +1,52 @@
-# Ahsan Munir
+# Growthinn
 
-> Shopify store experience — design and development. Publishes the standard a Shopify store is built and assessed against, so a buyer can evaluate any developer — including this one.
-
-## The standard
-
-Every check below ships with what it catches, how to run it yourself, and what it misses. Published in full at https://growthinn.co/standard/
-
-- **Structure that survives the next change** — Whether the theme can absorb a new section without a developer rewriting a template.
-- **A merchant who can edit without calling anyone** — Whether the person who owns the store can change its content without a developer.
-- **A performance target that holds as content grows** — Whether the store is fast on the pages that carry real content, measured in numbers rather than impressions.
-- **WCAG 2.1 AA, verified — not intended** — Whether accessibility is a measured state or a stated value.
-- **Documentation your team can actually use** — Whether the handover is a document or a phone number.
-- **Every app's cost, decided deliberately** — Whether anyone costed the apps before installing them.
-- **A QA phase with a checklist, not a click-around** — Whether testing is a defined stage or an afternoon.
-- **A defined first month after handover** — Whether the riskiest thirty days are scoped or improvised.
-- **A store you can change in six months without me** — Whether the exit exists, whether or not you use it.
-- **Checkout, end to end** — Whether the checkout completes, not merely renders.
-- **The conversion paths, walked** — Whether the paths that carry money were walked or assumed.
-- **The browsers your customers actually use** — Whether the tested browsers match the ones in your analytics.
-- **Rendering that doesn't make the shopper wait** — Whether Liquid, scripts and third-party code delay the content the shopper actually came for.
-
-## What this site cannot demonstrate
-
-- Checkout, end to end — requires a live Shopify store with real orders.
-- The conversion paths, walked — requires a live Shopify store with real orders.
-- Rendering that doesn't make the shopper wait — requires a live Shopify store with real orders.
-
-These are published as out of scope for this surface rather than omitted.
+> Ahsan Munir — ecommerce growth specialist working on Shopify stores.
+> Conversion rate optimisation: diagnosis and implementation by the same person.
+> Does not create, run or manage advertising. Does not do off-site SEO.
 
 ## Pages
 
-- https://growthinn.co/standard/ — the checks, in full
-- https://growthinn.co/services/ — what is built, and what decides the number
-- https://growthinn.co/audit/ — a store audit against the checks
-- https://growthinn.co/for-agencies/ — white-label terms and the standard as a document
-- https://growthinn.co/work/ — engagements scored against the checks
-- https://growthinn.co/about/ — who does the work
+- [Home](https://growthinn.co/): The argument: traffic is usually not the problem. Includes a live calculator comparing a conversion improvement against the ad spend needed for the same revenue.
+- [What I Do](https://growthinn.co/services/): The eight services, ordered by the buyer situation each answers. Names the paid-media exclusion.
+- [Shopify CRO](https://growthinn.co/shopify-cro/): The five places a Shopify store loses an order; who implements the fix; speed and mobile as conversion problems. Six FAQs.
+- [Shopify CRO audit](https://growthinn.co/shopify-cro-audit/): The offer: a free read naming one leak, then a $500 prioritised plan credited against the build. Six FAQs. No revenue guarantee is given, and why.
+- [Landing pages for paid traffic](https://growthinn.co/landing-pages-paid-traffic/): Pages built for Meta and TikTok traffic. Four FAQs, all on the boundary between page work and ad management.
+- [Amazon to Shopify](https://growthinn.co/amazon-to-shopify/): A new store built to convert, with the catalogue migrated. No traffic promise.
+- [Product schema & Merchant Center](https://growthinn.co/product-schema-merchant-center/): Theme-level structured data and feed error fixes, validated at handover. Owns schema on this site.
+- [AI shopping visibility](https://growthinn.co/ai-shopping-visibility/): What is already automatic for Shopify catalogues versus what decides whether a product can be understood and compared. States plainly that recommendation cannot be promised.
+- [Theme redesign & Online Store 2.0](https://growthinn.co/shopify-theme-redesign/): A dated theme rebuilt for conversion — and an honest answer on whether a rebuild is needed at all.
+- [Fractional growth manager](https://growthinn.co/fractional-growth-manager/): An ongoing growth function. Not currently open as a retainer; the page says so.
+- [The method](https://growthinn.co/method/): The seven steps, each with the reason it exists, and the six questions taken to a product page. The step most people skip is measuring again.
+- [About](https://growthinn.co/about/): Ahsan Munir, and the three specialists who cover load.
+- [Notes](https://growthinn.co/notes/): Write-ups from real store teardowns. The standard is that a piece must require a real store to write.
+- [Case studies](https://growthinn.co/case-studies/): Engagements described by what was wrong, what changed, and under what conditions the figures were measured.
+- [Contact](https://growthinn.co/contact/): The free read, or a 20-minute call.
+- [Privacy](https://growthinn.co/privacy/): Data practices, including read access to client analytics.
+
+## Notes
+
+- [I read 40 Shopify job posts. Here's what they asked for.](https://growthinn.co/notes/40-shopify-job-posts/): Two weeks of Upwork posts, counted. The lines, screening questions and requirements that kept repeating — in the posts' own words, with what this cannot tell you.
+- [A premium theme is not slow because it is premium](https://growthinn.co/notes/conversion-theme-architecture/): Why beautiful Shopify storefronts load slowly — and why none of the actual causes are the design. Four specific, fixable decisions.
+- [CRO consultant vs agency: what buyers actually ask for](https://growthinn.co/notes/cro-consultant-vs-agency/): Every comparison of CRO consultants and agencies is written by one of the two. Here's what 56 real job posts ask for instead, and a test to run on your own funnel.
+- [Does your CRO specialist need to know your category?](https://growthinn.co/notes/does-cro-vertical-expertise-matter/): Most answers come from agencies selling their niche. Here's what 56 real job posts ask for, which reasons hold up, and one question to put to any specialist's pitch.
+- [What to check before you hire a Shopify developer](https://growthinn.co/notes/hire-shopify-developer-checks/): Seven things you can verify yourself before signing — using a developer's own past work, a browser, and about an hour. No technical knowledge required.
+- [Five CRO mistakes that quietly cost DTC brands revenue](https://growthinn.co/notes/shopify-cro-mistakes/): The five conversion leaks I find most often on Shopify stores doing real traffic — and how to close them without redesigning the whole store.
+- [A Shopify store speed test answers one of four questions. Which one did yours?](https://growthinn.co/notes/shopify-speed-test-four-questions/): Four different things get called a Shopify store speed test, and they answer four different questions. Which one your "we tested it" actually was — and what it could not tell you.
+- [What Shopify does by default that hurts your organic growth](https://growthinn.co/notes/shopify-technical-seo-guide/): Five platform defaults that quietly throttle Shopify SEO — duplicate URLs, pagination signals, product paths, slow responses, and nobody watching the index.
+- [I read 1,471 Shopify theme reviews. Here's what they say.](https://growthinn.co/notes/shopify-theme-reviews/): Every review on five themes, collected and counted. What reviewers wrote about missing settings, image sizes, support and updates — in their own words, with what this cannot tell you.
+- [Traffic but no sales: how to find the leak that is costing you most](https://growthinn.co/notes/shopify-traffic-no-sales/): Five conversion leaks, the signal that reveals each, and a way to decide which to fix first — by what it is worth, not by what is easy.
+- [Where trust signals go on a product page, and why order beats quantity](https://growthinn.co/notes/trust-signal-placement-product-page/): A brand nobody has heard of rarely lacks proof. The reviews, badges and guarantee are all there — and the page is still unconvincing. The problem is placement, not volume.
+- [Hiring a white-label Shopify developer: the two risks to ask about](https://growthinn.co/notes/white-label-shopify-developer-risks/): Every white-label page is written by someone selling it. Here are the two risks an agency actually carries, what agencies put in their own briefs, and the questions to ask.
+
+## Case studies
+
+- [Recovering a fitness brand's organic traffic after a quiet collapse](https://growthinn.co/case-studies/fitness-technical-seo/): Organic sessions had been sliding for months with no obvious cause. An audit found Shopify's default behaviour was indexing thousands of duplicate URLs and burning crawl budget.
+- [Maintaining a high-converting storefront for a salon-grade haircare brand](https://growthinn.co/case-studies/haircare-theme-rebuild/): A premium haircare brand needed a storefront that kept pace with daily campaigns and an expanding affiliate network. A custom theme plus continuous optimisation replaced a patchwork of third-party apps.
+- [Cutting a supplement brand's checkout drop-off in half](https://growthinn.co/case-studies/supplement-brand-cro/): Strong paid traffic, people adding to cart and vanishing. A structured CRO programme — hypothesis, control, measured result — rather than a redesign.
+- [Turning a wellness brand's product pages into its best salesperson](https://growthinn.co/case-studies/wellness-pdp-cro/): A subscription-led brand whose product pages listed ingredients and asked people to buy. Restructured around the decision a hesitant first-time buyer actually makes.
+
+## About this site
+
+- All content is server-rendered static HTML; nothing on this site requires JavaScript to read.
+- Figures attributed to client work are published only with written permission and always with their timeframe, traffic volume, and what else changed.
+- The calculator on the home page runs in the browser; no entered figure is transmitted.
