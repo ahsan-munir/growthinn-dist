@@ -17,13 +17,13 @@
 <IfModule mod_alias.c>
   RedirectMatch 301 "^/ecommerce-development-services/$" "/services/"
   RedirectMatch 301 "^/ecommerce-development-services/shopify-cro/$" "/shopify-cro/"
-  RedirectMatch 301 "^/ecommerce-development-services/shopify-technical-seo/$" "/product-schema-merchant-center/"
+  RedirectMatch 301 "^/ecommerce-development-services/shopify-technical-seo/$" "/shopify-technical-seo/"
   RedirectMatch 301 "^/ecommerce-development-services/ecommerce-cro-audit/$" "/shopify-cro-audit/"
   RedirectMatch 301 "^/ecommerce-development-services/conversion-theme-development/$" "/shopify-theme-redesign/"
   RedirectMatch 301 "^/ecommerce-development-services/shopify-landing-page-development/$" "/landing-pages-paid-traffic/"
   RedirectMatch 301 "^/ecommerce-development-services/shopify-product-page-development/$" "/shopify-cro/"
   RedirectMatch 301 "^/services/cro-ux/$" "/shopify-cro/"
-  RedirectMatch 301 "^/services/technical-seo/$" "/product-schema-merchant-center/"
+  RedirectMatch 301 "^/services/technical-seo/$" "/shopify-technical-seo/"
   RedirectMatch 301 "^/services/theme-development/$" "/shopify-theme-redesign/"
   RedirectMatch 301 "^/services/theme-redesign/$" "/shopify-theme-redesign/"
   RedirectMatch 301 "^/services/landing-pages/$" "/landing-pages-paid-traffic/"
@@ -56,6 +56,31 @@
 # so an old URL is 301'd to its target before this can touch it.
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # ── ONE HOSTNAME ────────────────────────────────────────────────
+  # ⚠️ ADDED 2026-10-13. www.growthinn.co served 200 — it did NOT
+  # redirect — so the whole site was reachable on two hostnames and
+  # every page existed twice. The canonical tag named the apex, but a
+  # canonical is a HINT and a 301 is an instruction. Likely the GSC
+  # "Duplicate, Google chose different canonical than user" row.
+  #
+  # Host-generic on purpose: %{HTTP_HOST} is reused rather than the
+  # domain hardcoded, so this cannot drift from the real origin.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # ── NO index.html ───────────────────────────────────────────────
+  # ⚠️ ADDED 2026-10-13. /index.html served 200 alongside /, so the
+  # home page was reachable at a second path too. Any directory
+  # index, not just the root: /notes/index.html collapses to /notes/.
+  #
+  # ⛔ MUST PRECEDE the -f guard below. index.html IS a real file, so
+  # the guard would match it first and this rule would never run.
+  # %{THE_REQUEST} reads the ORIGINAL request line, so this only
+  # fires on what the visitor actually typed — an internal rewrite
+  # to index.html is untouched and there is no redirect loop.
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+  RewriteRule ^(.*/)?index\.html$ /%1 [R=301,L]
 
   # Never rewrite a real file or directory.
   RewriteCond %{REQUEST_FILENAME} -f [OR]

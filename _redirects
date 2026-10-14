@@ -54,7 +54,15 @@
 
 /ecommerce-development-services/                                    /services/                       301
 /ecommerce-development-services/shopify-cro/                        /shopify-cro/                    301
-/ecommerce-development-services/shopify-technical-seo/              /product-schema-merchant-center/ 301
+# ⭐ RE-POINTED 2026-10-13 — was /product-schema-merchant-center/. Page 17
+#   now owns the *Shopify technical SEO* intent [SOW §2.1 rev 4], so this
+#   URL goes to the page making the SAME offer rather than to the schema
+#   page, which answers a narrower question. This is the 296-impression
+#   cluster (GSC 2026-10-10): `shopify technical seo` 81, `technical seo
+#   for shopify` 58, `technical seo shopify` 30, `seo tecnico shopify` 27.
+# ⛔ REVERT BOTH THIS AND /services/technical-seo/ TO PAGE 7 if [SOW §2.8]'s
+#   overlap test fails — see the copy file's gate.
+/ecommerce-development-services/shopify-technical-seo/              /shopify-technical-seo/          301
 /ecommerce-development-services/ecommerce-cro-audit/                /shopify-cro-audit/              301
 /ecommerce-development-services/conversion-theme-development/       /shopify-theme-redesign/         301
 /ecommerce-development-services/shopify-landing-page-development/   /landing-pages-paid-traffic/     301
@@ -69,7 +77,8 @@
 # Same destinations as their gen-1 ancestors, reached directly.
 
 /services/cro-ux/            /shopify-cro/                    301
-/services/technical-seo/     /product-schema-merchant-center/ 301
+# ⭐ RE-POINTED 2026-10-13 with its gen-1 ancestor above — same reason.
+/services/technical-seo/     /shopify-technical-seo/          301
 /services/theme-development/ /shopify-theme-redesign/         301
 /services/theme-redesign/    /shopify-theme-redesign/         301
 /services/landing-pages/     /landing-pages-paid-traffic/     301
