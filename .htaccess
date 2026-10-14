@@ -43,6 +43,113 @@
   RedirectMatch 301 "^/case-studies/beauty-headless-migration/$" "/case-studies/"
 </IfModule>
 
+# ── Short links · src/data/links.ts · 42 codes ────────────
+#    /go/ LinkedIn  ·  /x/ X  ·  /rd/ Reddit  ·  /em/ Email  ·  /gh/ GitHub  ·  /cm/ Community
+# ⛔ GENERATED. Add or change a link in src/data/links.ts, then rebuild.
+#    A hand-edit here survives until the next `pnpm release` and then
+#    disappears with no error.
+#
+# ⛔ 302, not 301 — these handles are EXPECTED to be re-pointed. A 301
+#    is cached hard by browsers and CDNs, so a later re-point reaches
+#    some readers and not others, with no way to tell which.
+#    ⭐ /*/standard is live proof: it points at /method/ until the
+#    standards page exists, then only its `to` changes.
+#
+# ⚠️ ABOVE THE TRAILING-SLASH RULE, DELIBERATELY. /go/audit has no
+#    trailing slash; if the slash rule ran first it would 301 to
+#    /go/audit/ and the reader would pay two redirects per click.
+#    `/?$` here accepts both forms and resolves in ONE hop.
+#
+# ⚠️ QSD DISCARDS ANY INBOUND QUERY. A platform that appends its own
+#    tracking param must not produce two `?` in the composed URL.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # The CRO audit — the entry offer and the conversion spine’s end.
+  RewriteRule "^go/audit/?$" "/shopify-cro-audit/?utm_source=linkedin&utm_medium=social&utm_campaign=cro_audit" [R=302,L,QSD]
+  # The standard. ⚠️ Points at /method/ until the standards page is built — re-point `to` only, never the campaign.
+  RewriteRule "^go/standard/?$" "/method/?utm_source=linkedin&utm_medium=social&utm_campaign=the_standard" [R=302,L,QSD]
+  # The CRO pillar — the whole-funnel diagnosis page.
+  RewriteRule "^go/cro/?$" "/shopify-cro/?utm_source=linkedin&utm_medium=social&utm_campaign=shopify_cro" [R=302,L,QSD]
+  # Page 17 — crawl and indexation. ⚠️ Gated on [SOW §2.8]’s overlap test; if that merges the page back into page 7, re-point `to`.
+  RewriteRule "^go/technical-seo/?$" "/shopify-technical-seo/?utm_source=linkedin&utm_medium=social&utm_campaign=technical_seo" [R=302,L,QSD]
+  # Amazon sellers building an owned store. ⚠️ A DIFFERENT AUDIENCE, not a service page — its own campaign so that traffic never merges with the audit’s.
+  RewriteRule "^go/amazon/?$" "/amazon-to-shopify/?utm_source=linkedin&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The writing. For a post pointing at the body of work rather than one article.
+  RewriteRule "^go/notes/?$" "/notes/?utm_source=linkedin&utm_medium=social&utm_campaign=notes" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^go/home/?$" "/?utm_source=linkedin&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
+  # The CRO audit — the entry offer and the conversion spine’s end.
+  RewriteRule "^x/audit/?$" "/shopify-cro-audit/?utm_source=x&utm_medium=social&utm_campaign=cro_audit" [R=302,L,QSD]
+  # The standard. ⚠️ Points at /method/ until the standards page is built — re-point `to` only, never the campaign.
+  RewriteRule "^x/standard/?$" "/method/?utm_source=x&utm_medium=social&utm_campaign=the_standard" [R=302,L,QSD]
+  # The CRO pillar — the whole-funnel diagnosis page.
+  RewriteRule "^x/cro/?$" "/shopify-cro/?utm_source=x&utm_medium=social&utm_campaign=shopify_cro" [R=302,L,QSD]
+  # Page 17 — crawl and indexation. ⚠️ Gated on [SOW §2.8]’s overlap test; if that merges the page back into page 7, re-point `to`.
+  RewriteRule "^x/technical-seo/?$" "/shopify-technical-seo/?utm_source=x&utm_medium=social&utm_campaign=technical_seo" [R=302,L,QSD]
+  # Amazon sellers building an owned store. ⚠️ A DIFFERENT AUDIENCE, not a service page — its own campaign so that traffic never merges with the audit’s.
+  RewriteRule "^x/amazon/?$" "/amazon-to-shopify/?utm_source=x&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The writing. For a post pointing at the body of work rather than one article.
+  RewriteRule "^x/notes/?$" "/notes/?utm_source=x&utm_medium=social&utm_campaign=notes" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^x/home/?$" "/?utm_source=x&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
+  # The CRO audit — the entry offer and the conversion spine’s end.
+  RewriteRule "^rd/audit/?$" "/shopify-cro-audit/?utm_source=reddit&utm_medium=social&utm_campaign=cro_audit" [R=302,L,QSD]
+  # The standard. ⚠️ Points at /method/ until the standards page is built — re-point `to` only, never the campaign.
+  RewriteRule "^rd/standard/?$" "/method/?utm_source=reddit&utm_medium=social&utm_campaign=the_standard" [R=302,L,QSD]
+  # The CRO pillar — the whole-funnel diagnosis page.
+  RewriteRule "^rd/cro/?$" "/shopify-cro/?utm_source=reddit&utm_medium=social&utm_campaign=shopify_cro" [R=302,L,QSD]
+  # Page 17 — crawl and indexation. ⚠️ Gated on [SOW §2.8]’s overlap test; if that merges the page back into page 7, re-point `to`.
+  RewriteRule "^rd/technical-seo/?$" "/shopify-technical-seo/?utm_source=reddit&utm_medium=social&utm_campaign=technical_seo" [R=302,L,QSD]
+  # Amazon sellers building an owned store. ⚠️ A DIFFERENT AUDIENCE, not a service page — its own campaign so that traffic never merges with the audit’s.
+  RewriteRule "^rd/amazon/?$" "/amazon-to-shopify/?utm_source=reddit&utm_medium=social&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The writing. For a post pointing at the body of work rather than one article.
+  RewriteRule "^rd/notes/?$" "/notes/?utm_source=reddit&utm_medium=social&utm_campaign=notes" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^rd/home/?$" "/?utm_source=reddit&utm_medium=social&utm_campaign=profile" [R=302,L,QSD]
+  # The CRO audit — the entry offer and the conversion spine’s end.
+  RewriteRule "^em/audit/?$" "/shopify-cro-audit/?utm_source=newsletter&utm_medium=email&utm_campaign=cro_audit" [R=302,L,QSD]
+  # The standard. ⚠️ Points at /method/ until the standards page is built — re-point `to` only, never the campaign.
+  RewriteRule "^em/standard/?$" "/method/?utm_source=newsletter&utm_medium=email&utm_campaign=the_standard" [R=302,L,QSD]
+  # The CRO pillar — the whole-funnel diagnosis page.
+  RewriteRule "^em/cro/?$" "/shopify-cro/?utm_source=newsletter&utm_medium=email&utm_campaign=shopify_cro" [R=302,L,QSD]
+  # Page 17 — crawl and indexation. ⚠️ Gated on [SOW §2.8]’s overlap test; if that merges the page back into page 7, re-point `to`.
+  RewriteRule "^em/technical-seo/?$" "/shopify-technical-seo/?utm_source=newsletter&utm_medium=email&utm_campaign=technical_seo" [R=302,L,QSD]
+  # Amazon sellers building an owned store. ⚠️ A DIFFERENT AUDIENCE, not a service page — its own campaign so that traffic never merges with the audit’s.
+  RewriteRule "^em/amazon/?$" "/amazon-to-shopify/?utm_source=newsletter&utm_medium=email&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The writing. For a post pointing at the body of work rather than one article.
+  RewriteRule "^em/notes/?$" "/notes/?utm_source=newsletter&utm_medium=email&utm_campaign=notes" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^em/home/?$" "/?utm_source=newsletter&utm_medium=email&utm_campaign=profile" [R=302,L,QSD]
+  # The CRO audit — the entry offer and the conversion spine’s end.
+  RewriteRule "^gh/audit/?$" "/shopify-cro-audit/?utm_source=github&utm_medium=referral&utm_campaign=cro_audit" [R=302,L,QSD]
+  # The standard. ⚠️ Points at /method/ until the standards page is built — re-point `to` only, never the campaign.
+  RewriteRule "^gh/standard/?$" "/method/?utm_source=github&utm_medium=referral&utm_campaign=the_standard" [R=302,L,QSD]
+  # The CRO pillar — the whole-funnel diagnosis page.
+  RewriteRule "^gh/cro/?$" "/shopify-cro/?utm_source=github&utm_medium=referral&utm_campaign=shopify_cro" [R=302,L,QSD]
+  # Page 17 — crawl and indexation. ⚠️ Gated on [SOW §2.8]’s overlap test; if that merges the page back into page 7, re-point `to`.
+  RewriteRule "^gh/technical-seo/?$" "/shopify-technical-seo/?utm_source=github&utm_medium=referral&utm_campaign=technical_seo" [R=302,L,QSD]
+  # Amazon sellers building an owned store. ⚠️ A DIFFERENT AUDIENCE, not a service page — its own campaign so that traffic never merges with the audit’s.
+  RewriteRule "^gh/amazon/?$" "/amazon-to-shopify/?utm_source=github&utm_medium=referral&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The writing. For a post pointing at the body of work rather than one article.
+  RewriteRule "^gh/notes/?$" "/notes/?utm_source=github&utm_medium=referral&utm_campaign=notes" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^gh/home/?$" "/?utm_source=github&utm_medium=referral&utm_campaign=profile" [R=302,L,QSD]
+  # The CRO audit — the entry offer and the conversion spine’s end.
+  RewriteRule "^cm/audit/?$" "/shopify-cro-audit/?utm_source=community&utm_medium=referral&utm_campaign=cro_audit" [R=302,L,QSD]
+  # The standard. ⚠️ Points at /method/ until the standards page is built — re-point `to` only, never the campaign.
+  RewriteRule "^cm/standard/?$" "/method/?utm_source=community&utm_medium=referral&utm_campaign=the_standard" [R=302,L,QSD]
+  # The CRO pillar — the whole-funnel diagnosis page.
+  RewriteRule "^cm/cro/?$" "/shopify-cro/?utm_source=community&utm_medium=referral&utm_campaign=shopify_cro" [R=302,L,QSD]
+  # Page 17 — crawl and indexation. ⚠️ Gated on [SOW §2.8]’s overlap test; if that merges the page back into page 7, re-point `to`.
+  RewriteRule "^cm/technical-seo/?$" "/shopify-technical-seo/?utm_source=community&utm_medium=referral&utm_campaign=technical_seo" [R=302,L,QSD]
+  # Amazon sellers building an owned store. ⚠️ A DIFFERENT AUDIENCE, not a service page — its own campaign so that traffic never merges with the audit’s.
+  RewriteRule "^cm/amazon/?$" "/amazon-to-shopify/?utm_source=community&utm_medium=referral&utm_campaign=catalogue_portability" [R=302,L,QSD]
+  # The writing. For a post pointing at the body of work rather than one article.
+  RewriteRule "^cm/notes/?$" "/notes/?utm_source=community&utm_medium=referral&utm_campaign=notes" [R=302,L,QSD]
+  # The homepage — for a profile link and any post pointing at the whole site rather than one surface.
+  RewriteRule "^cm/home/?$" "/?utm_source=community&utm_medium=referral&utm_campaign=profile" [R=302,L,QSD]
+</IfModule>
+
 # ── Trailing slashes ───────────────────────────────────────────────
 # astro.config.mjs sets `trailingSlash: "always"` and the build emits
 # directory-style pages (/about/index.html). This makes Apache agree,
